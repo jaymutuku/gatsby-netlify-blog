@@ -1,7 +1,7 @@
 ---
 title: How to build an Electron app using create-react-app. No webpack configuration or “ejecting” necessary.
 date: 2018-08-03
-tags: [javascript, react, electron, nodejs]
+tags: [javascript, react, electron, nodejs,netlify]
 path: blog/build-electron-app-with-react
 cover: ./preview.png
 excerpt: Build a fantastic Electron app from scratch using create-react-app.
