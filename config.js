@@ -2,7 +2,7 @@ module.exports = {
   pathPrefix: '/gatsby-netlify-blog',
   siteUrl: 'https://jaymutuku.github.io',
   siteTitle: 'Josphat Mutuku',
-  siteDescription: 'Quality Assurance Workbench',
+  siteDescription: 'Software QA Workbench',
   author: 'jaymutuku',
   postsForArchivePage: 3,
   defaultLanguage: 'en',
@@ -52,6 +52,78 @@ module.exports = {
     vuejs: {
       name: 'Vue.js',
       description: 'Vue.js is a JavaScript framework for building interactive web applications.'
+    },
+    algorithms: {
+      name: 'Algorithms',
+      description: 'Algorithm is a step by step procedure to solve logical and mathematical problems.'
+    },
+    android: {
+      name: 'UI automator',
+      description: 'UI automator is a UI testing framework suitable for cross-app functional UI testing across system and installed apps.'
+    },
+    arquillian: {
+      name: 'Arquillian',
+      description: 'Arquillian is an integration/functional testing framework for testing JVM based application.'
+    },
+    aws: {
+      name: 'AWS Device Farm ',
+      description: 'AWS Device Farm is an application testing service that lets you improve the quality of your web and mobile apps by testing them across an extensive range of desktop browsers and real mobile devices; without having to provision and manage any testing infrastructure.'
+    },
+    confluence: {
+      name: 'Test Plan',
+      description: 'A Test Plan is a document outlining the plan for the entire test process.'
+    },
+    excel: {
+      name: 'Excel',
+      description: 'Ms Excel is a spreadsheet program, a powerful data visualization and analysis tool. '
+    },
+    fedora: {
+      name: 'Fedora',
+      description: 'Fedora is a Linux distribution developed by the community primarily sponsored  by Red Hat, a subsidiary of IBM.'
+    },
+    gatsby: {
+      name: 'Gatsby',
+      description: 'Gatsby is a free and open source framework based on React that helps developers build blazing fast websites and apps.'
+    },
+    git: {
+      name: 'Git',
+      description: 'Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.'
+    },
+    java: {
+      name: 'Test NG',
+      description: 'Test NG is a testing framework designed to simplify a broad range of testing needs, from unit testing  to integration testing'
+    },
+    maths: {
+      name: 'Maths',
+      description: 'Maths includes the study of such topics as quantity (number theory), structure (algebra), space (geometry), and change (mathematical analysis).'
+    },
+    netlify: {
+      name: 'Netlify',
+      description: 'Netlify is a static website hosting company/a service for quickly rolling out static websites.'
+    },
+    postgresql: {
+      name: 'PostgreSQL',
+      description: 'PostgreSQLis a free and open-source relational database management system (RDBMS) emphasizing extensibility and SQL compliance.'
+    },
+    postman: {
+      name: 'Postman',
+      description: 'Postman is a scalable API testing tool that quickly integrates into CI/CD pipeline.'
+    },
+    python: {
+      name: 'Python',
+      description: 'Python is an interpreted, high-level, general-purpose programming language.Used mainly for scripting,automation and data science.'
+    },
+    quotes: {
+      name: 'Quotes',
+      description: 'Quotes are sayings,thoughts,phrases,proverbs,famous words,book excerpts,movie scenes that should be a source of daily inspiration.'
+    },
+    selenium: {
+      name: 'Selenium',
+      description: 'Selenium is a web automation framework that allows you to execute your tests against different browsers.'
+    },
+    visualstudiocode: {
+      name: 'Visual Studio Code',
+      description: 'Visual studio code is a code editor redefined and optimized for building and debugging modern web and cloud applications.'
     }
   }
 }
