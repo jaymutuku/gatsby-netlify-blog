@@ -3,7 +3,7 @@ title: How to change the color of an icon with Gimp.
 date: 2020-05-05
 tags: [gimp]
 path: blog/change-color-icon-with-gimp
-cover: ./preview.png
+cover: ./preview.jpg
 excerpt: Change the color of an icon to black - white.
 ---
 
@@ -73,21 +73,16 @@ You should see the resultant image below
 
 ![flip  color](./gimp-img-7.png)
 
-The `red` arrow in the screenshot shows you your steps in summary.
+The `red` arrow in the screenshot shows your steps in summary.
 
 Voila! You are done.
 
 #### 6: Export your new icon
 
-You can export your visible icon by Selecting `File > Export as ...`.
+You can export your visible icon by Selecting `File > Export as ...`
 
 Give it a new name so that you don't overwrite the original one in case you missed a step and need to follow the process again.
 
 ### Reference
 
 The web [article](http://www.benramey.com/2012/03/15/change-the-color-of-an-icon-with-gimp/) describing this process much better.
-
-
-
-
-
