@@ -124,6 +124,11 @@ module.exports = {
     visualstudiocode: {
       name: 'Visual Studio Code',
       description: 'Visual studio code is a code editor redefined and optimized for building and debugging modern web and cloud applications.'
-    }
+    },
+gimp:{
+description:'gimp is a free and open-source raster graphics editor used for image retouching and editing, free-form drawing, converting between different image formats, and more specialized tasks. '
+
+}
+
   }
 }
