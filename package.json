@@ -28,7 +28,10 @@
     "react-dom": "^16.10.2",
     "react-helmet": "^6.0.0",
     "react-icons": "^3.7.0",
-    "react-share": "^4.1.0"
+    "react-share": "^4.1.0",
+    "react-refresh":"^0.8.2",
+    "typescript":"^3.7.0-dev",
+    "acorn":"^6.0.0"
   },
   "keywords": [
     "gatsby"
