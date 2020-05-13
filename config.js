@@ -127,6 +127,9 @@ module.exports = {
     },
     gimp: {
       description: 'Gimp is a free and open-source raster graphics editor used for image retouching and editing, free-form drawing, converting between different image formats, and more specialized tasks. '
+    },
+    docker: {
+      description: 'Docker is an open source platform for building, deploying, and managing containerized applications.'
     }
   }
 }
