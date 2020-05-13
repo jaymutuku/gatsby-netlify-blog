@@ -3,7 +3,7 @@ title: How to stop git from prompting for username and password.
 date: 2020-05-13
 tags: [git]
 path: blog/stop-git-from-asking-username-password
-cover: ./preview.png
+cover: ./preview.jpg
 excerpt: Stop git from asking username and password everytime.
 ---
 
@@ -24,7 +24,7 @@ Type this command
 ```
 $ ssh-keygen -t -C "<your github email here>"
 ```
-Sustitute the text with your email including `<...>`to something like
+Substitute the text with your email including `<...>`to something like
 
 `ssh-keygen -t -C "myemail@gmail.com"`
 
@@ -65,7 +65,7 @@ Paste the Key on the **key** box.
 
 Press `Add SSH key`
 
-Note:keys are usually under this url in Github ``https://github.com/settings/keys`
+Note:keys are usually under this URL in Github `https://github.com/settings/keys`
 
 ### Step 3: Troubleshooting
 
@@ -87,9 +87,8 @@ $ git remote set-url origin git@github.com:<your-username>/<your-repository>
 ```
 Actually you should repeat the above command for all your repos that you cloned using `HTTP`.
 
-Moving forward you should start cloning your repos using `SSH`
-
 ### Step 4: Conclusion
+Moving forward you should start cloning your repos using `SSH`.
 
 If you have another workstation,you can follow the same process.
 

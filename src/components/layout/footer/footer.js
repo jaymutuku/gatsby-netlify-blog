@@ -5,7 +5,7 @@ import style from './footer.module.less'
 
 const Footer = () => (
   <div className={style.container}>
-    <p>Made with Gatsby.js, hosted on GitHub Pages</p>
+    <p>Made with Gatsby.js, hosted on Netlify</p>
   </div>
 )
 
