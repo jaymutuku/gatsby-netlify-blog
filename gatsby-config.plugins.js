@@ -1,11 +1,11 @@
 const config = require('./config')
-const feedPlugin = require('./gatsby-config.plugins.feed')
 
 module.exports = [
   'gatsby-plugin-react-helmet',
   'gatsby-transformer-sharp',
   'gatsby-plugin-sharp',
   'gatsby-plugin-less',
+  
   {
     resolve: `gatsby-source-filesystem`,
     options: {
@@ -46,7 +46,8 @@ module.exports = [
           },
         },
         'gatsby-remark-prismjs',
-        'gatsby-remark-copy-linked-files'
+        'gatsby-remark-copy-linked-files',
+        'gatsby-plugin-catch-links' // for relative markdown files
       ]
     }
   },
@@ -57,7 +58,4 @@ module.exports = [
       useLangKeyLayout: false
     }
   },
-  feedPlugin,
-  `gatsby-plugin-sitemap`,
-  `gatsby-plugin-robots-txt`
 ]

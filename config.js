@@ -5,8 +5,7 @@ module.exports = {
   siteDescription: 'Software QA Workbench',
   author: 'jaymutuku',
   postsForArchivePage: 3,
-  defaultLanguage: 'en',
-  //disqusScript: 'https://josphat-mutuku.disqus.com/embed.js',
+  defaultLanguage: 'en', 
   pages: {
     home: '/',
     blog: 'blog',
@@ -16,8 +15,7 @@ module.exports = {
   },
   social: {
     github: 'https://github.com/jaymutuku',
-    linkedin: 'https://www.linkedin.com/in/josphat-mutuku-9222ba32/',
-    rss: '/rss.xml'
+    linkedin: 'https://www.linkedin.com/in/josphat-mutuku-9222ba32/'   
   },
   tags: {
     angular: {
@@ -78,7 +76,6 @@ module.exports = {
       description: 'Ms Excel is a spreadsheet program, a powerful data visualization and analysis tool. '
     },
     fedora: {
-      name: 'Fedora',
       description: 'Fedora is a Linux distribution developed by the community primarily sponsored  by Red Hat, a subsidiary of IBM.'
     },
     gatsby: {
@@ -102,8 +99,7 @@ module.exports = {
       description: 'Netlify is a static website hosting company/a service for quickly rolling out static websites.'
     },
     postgresql: {
-      name: 'PostgreSQL',
-      description: 'PostgreSQLis a free and open-source relational database management system (RDBMS) emphasizing extensibility and SQL compliance.'
+      description: 'PostgreSQL is a free and open-source relational database management system (RDBMS) emphasizing extensibility and SQL compliance.'
     },
     postman: {
       name: 'Postman',
@@ -130,6 +126,24 @@ module.exports = {
     },
     docker: {
       description: 'Docker is an open source platform for building, deploying, and managing containerized applications.'
-    }
+    },
+    code: {
+          description: 'Source Code or Code Snippet'
+          },
+    iq: {
+       description:'Intelligent Quotient(IQ) is a measure of a persons reasoning ability(measured using problem solving tests) as compared to statistical norm or average for their age.' 
+    },
+    testing: {
+       description: 'Testing is the process of identifying defects,where a defect is any variance between actual and expected results'
+    },
+    bug: {
+        description: 'A Software Bug is any part of the software which causes the software to deviate from its expected behaviour.'
+        },
+    quality: {
+        description: 'Quality as software quality is the degree of conformance to explicit(clearly defined/documented) or implicit(not clearly defined/documented but indirectly suggested) requirements and expectations.'
+        },
+    api: {
+        description: 'API (Application Programming Interface) is a set of programming code that enables data transmission between one software product and another.'
+         }
   }
 }

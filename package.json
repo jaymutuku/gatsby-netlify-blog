@@ -4,9 +4,10 @@
   "version": "1.0.0",
   "author": "jaymutuku",
   "dependencies": {
+    "acorn": "^7.1.1",
     "gatsby": "^2.15.29",
     "gatsby-image": "^2.2.24",
-    "gatsby-plugin-feed": "^2.3.15",
+    "gatsby-plugin-catch-links": "^2.3.1",
     "gatsby-plugin-i18n": "^1.0.1",
     "gatsby-plugin-less": "^3.0.9",
     "gatsby-plugin-manifest": "^2.2.20",
@@ -28,10 +29,8 @@
     "react-dom": "^16.10.2",
     "react-helmet": "^6.0.0",
     "react-icons": "^3.7.0",
-    "react-share": "^4.1.0",
-    "react-refresh":"^0.8.2",
-    "typescript":"^3.7.0-dev",
-    "acorn":"^6.0.0"
+    "react-refresh": "^0.7.2",
+    "react-share": "^4.1.0"
   },
   "keywords": [
     "gatsby"
@@ -40,6 +39,7 @@
   "scripts": {
     "build": "gatsby build",
     "dev": "gatsby develop",
+    "clean":"gatsby clean",    
     "start": "npm run dev",
     "serve": "gatsby serve",
     "format": "prettier --write \"src/**/*.js\"",

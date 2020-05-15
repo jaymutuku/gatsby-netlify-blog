@@ -16,11 +16,6 @@ export const aboutPropTypes = {
         fluid: PropTypes.object.isRequired,
       }).isRequired,
     }).isRequired,
-    // flagIt: PropTypes.shape({
-    //   childImageSharp: PropTypes.shape({
-    //     fixed: PropTypes.object.isRequired,
-    //   }),
-    // }),
     flagEn: PropTypes.shape({
       childImageSharp: PropTypes.shape({
         fixed: PropTypes.object.isRequired,
@@ -40,7 +35,7 @@ class About extends React.Component {
       <Layout>
         <SEO
           title="About"
-          description="A brief summary of this blog"
+          description="A software tester blog"
           path="about"
         />
         <div className={style.container}>
@@ -51,16 +46,14 @@ class About extends React.Component {
             <h1>Hi, I'm Josphat!</h1>
             <h2>Quality Assurance Engineer</h2> 
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-              cursus venenatis arcu, cursus pretium enim lacinia nec. Duis
-              viverra sagittis neque. Fusce non luctus urna. Vivamus suscipit
-              metus ac posuere egestas. Nunc a pulvinar purus. Vivamus nisi mi,
-              fringilla quis lacus et, sagittis mollis massa. Cras tempus massa
-              quis lobortis laoreet. Pellentesque metus odio, sagittis nec
-              venenatis non, maximus congue eros. Suspendisse pellentesque purus
-              sit amet ante commodo, et molestie mauris aliquet. Proin non nibh
-              libero. Fusce at nulla euismod, condimentum augue quis, convallis
-              justo.
+              This blog is my attempt to <a href = "https://www.swyx.io/writing/learn-in-public/" >Learn in Public</a>
+              and also serves as an online backup of my diary notes as far as software quality assurance work is concerned.
+              It doesn't necessary have  to do with just technical skills but can have articles that I deem quite useful that I feel the need to share.
+              It is quite as selfish blog that is why it doesn't have comments section but in case you feel the 
+              need to contact me,my email address in mutuku "dot" josphat "at" gmail "dot" com.A little about me:
+              I have a good knowledge of translating manual test cases to automated ones.Am very proficient in 
+              designing test cases,writing test plans and also being a QA Lead,am good at assigning test effort and
+              resources to test team.
             </p>
             <br />
             <h2>Skills</h2>
