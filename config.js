@@ -128,6 +128,7 @@ module.exports = {
       description: 'Docker is an open source platform for building, deploying, and managing containerized applications.'
     },
     code: {
+          name:'Snippet',
           description: 'Source Code or Code Snippet'
           },
     iq: {

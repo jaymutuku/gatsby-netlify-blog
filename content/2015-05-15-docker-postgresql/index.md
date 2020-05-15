@@ -1,10 +1,10 @@
 ---
-title: How to install postgresql on docker.
+title: How to install postgresql on docker
 date: 2020-05-13
 tags: [postgresql, docker]
 path: blog/docker-postgresql
 cover: ./preview.jpg
-excerpt: Run postgresql as a docker container.
+excerpt: Run postgresql as a docker container
 ---
 
 
