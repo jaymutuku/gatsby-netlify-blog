@@ -29,7 +29,7 @@ is for Fedora 31.
 
 If you look closely at this screenshot,you can confirm that.
 
-![ Docker Fedora Files](./fedora-img-1) Number 32 for Fedora 32 is missing!
+![ Docker Fedora Files](./fedora-img-1.png) Number 32 for Fedora 32 is missing!
 
 ### Step 1: Delete the created local repository file for Docker CE 31
 Open your terminal and type enter `cd /etc/yum.repos.d/`.The type `ls` to list files there.
@@ -49,7 +49,7 @@ The type `sudo gedit docker-ce-31.repo` or you can use vim to open the file.
 Copy - Paste the following contents.
 ```
 [docker-ce-31]
-name= Docker CE stable 31
+name=Docker CE stable 31
 baseurl=https://download.docker.com/linux/fedora/31/x86_64/stable
 enabled=1
 ```
@@ -58,11 +58,22 @@ Then Save.
 ### Step 3: Configure your system so that it can recognize this repos and use it to install and update docker
 Don't forget we will be using docker for fedora 31.
 
-Type the command below.Kindly confirm your terminal isin this folder `yum.repos.d`.
+Type the command below.Kindly confirm your terminal is in this folder `yum.repos.d`.
 
 ```
 $ sudo dnf config-manager --add-repo=docker-ce-31.repo
 ```
+
+If still encountering issues with above command try
+```
+ $ sudo dnf config-manager --add-repo=https://download.docker.com/linux/fedora/31/x86_64/stable
+```
+To test that the above command added the repos successfully and its working type
+
+```
+$ sudo dnf update
+```
+to up date your system.
 
 ### Step 4: Install the docker engine
 Now install the docker engine
@@ -94,25 +105,6 @@ $ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 ```
 $ docker-compose --version
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

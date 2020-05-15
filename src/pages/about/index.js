@@ -46,10 +46,10 @@ class About extends React.Component {
             <h1>Hi, I'm Josphat!</h1>
             <h2>Quality Assurance Engineer</h2> 
             <p>
-              This blog is my attempt to <a href = "https://www.swyx.io/writing/learn-in-public/" >Learn in Public</a>
+              This blog is my attempt to <a href = "https://www.swyx.io/writing/learn-in-public/" >Learn in Public</a> 
               and also serves as an online backup of my diary notes as far as software quality assurance work is concerned.
               It doesn't necessary have  to do with just technical skills but can have articles that I deem quite useful that I feel the need to share.
-              It is quite as selfish blog that is why it doesn't have comments section but in case you feel the 
+              It is quite as selfish blog that is why it doesn't have comments section(just trying to avoid junk mail and spam bots!) but in case you feel the 
               need to contact me,my email address in mutuku "dot" josphat "at" gmail "dot" com.A little about me:
               I have a good knowledge of translating manual test cases to automated ones.Am very proficient in 
               designing test cases,writing test plans and also being a QA Lead,am good at assigning test effort and

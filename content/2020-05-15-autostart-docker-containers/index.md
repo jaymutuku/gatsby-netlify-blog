@@ -1,10 +1,10 @@
 ---
-title: How to automatically start docker containers.
+title: How to automatically start docker containers
 date: 2020-05-13
 tags: [docker, code, visualstudiocode]
 path: blog/automatically-start-docker-containers
 cover: ./preview.jpg
-excerpt: Autostart some docker containers on system boot.
+excerpt: Autostart some docker containers on system boot
 ---
 
 
@@ -16,8 +16,7 @@ frequently and therefore you wish that everytime you are interacting with them, 
 
 1. [PlantUML Server](https://hub.docker.com/r/plantuml/plantuml-server/)
 
-Docker server container to render [code as diagrams](https://real-world-plantuml.com/) or is it vice versa
-!
+Docker server container to render [code as diagrams](https://real-world-plantuml.com/) or is it vice versa!
 
 Check the references at the bottom of this post if you want to delve deeper into this subject.
 
