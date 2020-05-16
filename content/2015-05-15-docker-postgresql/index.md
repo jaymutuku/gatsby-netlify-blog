@@ -28,7 +28,7 @@ Enough of that.Not convinced? Anyway, here is the process of setting up postgres
 
 Ensure the docker service is running, trigger this manually.
 
-```
+```bash
 $ sudo systemctl start docker
 ```
 
@@ -62,14 +62,14 @@ POSTGRES_DB=family
 Type the following command to run postgres docker container.Make sure the above files are in the same directory
 and the terminal is also pointing there before executing the following command.
 
-```
+```bash
 $ docker-compose up 
 
 ```
 
 Expected output from terminal logs
 
-```
+```bash
 database_1  | 2020-05-15 18:03:32.502 UTC [1] LOG:  starting PostgreSQL 12.2 (Debian 12.2-2.pgdg100+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 8.3.0-6) 8.3.0, 64-bit
 database_1  | 2020-05-15 18:03:32.503 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
 database_1  | 2020-05-15 18:03:32.503 UTC [1] LOG:  listening on IPv6 address "::", port 5432
@@ -161,6 +161,61 @@ You have achieved the following:
 3. Created tables in your database and added some data.
 
 Having done that now we have chance to look into [automating](/blog/automatically-start-docker-containers/) starting of some specific docker containers at system boot.
+
+
+### Troubleshooting
+Sometimes you may find out that you did something to your database and can't seem to fix it.You just wish to nuke everything and start on a clean
+slate.So it would be better to completely delete the **docker volumes** holding the databases and recreating them afresh.
+
+Here are steps you can follow:
+
+#### 1. Delete all the containers
+This is done prior to deleting the volumes.
+```bash
+$ docker rm $(docker ps -a -q) -f
+```
+If it is running you can either stop it or forcefully delete it using the following command
+```bash
+$ docker rm --force <container_id>
+```
+
+`container_id`, you will get it from the first command.
+
+####  2. Delete all the volumes
+```bash
+$ docker volume prune
+```
+or be more specific if you don't want to delete all the volumes
+```
+$ docker volume ls
+```bash
+then `docker volume rm <volume_name>`.
+
+#### 3. Recreate the volumes
+Recreating is simply starting the application
+```bash
+$ docker-compose up build
+```
+
+If using **docker-compose.yml**, you may as well recreate the database.
+
+```bash
+$ docker-compose up -d --force-recreate database
+```
+The name `database` is actually one of our service in the docker-compose file(just look at it closely).
+
+But before executing the above command you may need to check your environment variables.I had actually messed up on this one.
+
+```bash
+$ docker-compose exec database env
+```
+You can try connecting to server using following command, verify the role `tester` here is actually the one appearing in the output of above command.
+```bash
+$ docker-compose exec database  psql -U tester
+```
+If you need to kill the container `docker-compose kill`, then `docker-compose rm` to remove it.
+
+Sometimes removing the images, containers etc, works so `docker-compose down`.
 
 ### References
 - [Getting Started with PostgreSQL using Docker-Compose](https://medium.com/analytics-vidhya/getting-started-with-postgresql-using-docker-compose-34d6b808c47c)

@@ -21,7 +21,7 @@ Type `cd ~/.ssh` to navigate to the hidden `.ssh` folder.Type `ls` to check what
 In my case,I can see a folder `known_hosts`.
 
 Type this command
-```
+```bash
 $ ssh-keygen -t -C "<your github email here>"
 ```
 Substitute the text with your email including `<...>`to something like
@@ -48,7 +48,7 @@ something like `id_rsa.pub`.
 
 To open this file,for instance using GEdit,type this command.
 
-```
+```bash
 $ sudo gedit github-key.pub
 ```
 Once this file opens up, Select All the text there and Copy.
@@ -70,7 +70,7 @@ Note:keys are usually under this URL in Github `https://github.com/settings/keys
 ### Step 3: Troubleshooting
 
 Now if you try to push/pull one of your repos.
-```
+```bash
 $ git push origin master
 ```
 or `git <remote-name> <branch>` .You may get this error.
@@ -82,7 +82,7 @@ or an equivalent error.
 The reason is that you repository is still using `HTTPS`.You need to change it to `SSH.`
 To do that type the following command
 
-```
+```bash
 $ git remote set-url origin git@github.com:<your-username>/<your-repository>
 ```
 Actually you should repeat the above command for all your repos that you cloned using `HTTP`.
@@ -93,6 +93,6 @@ Moving forward you should start cloning your repos using `SSH`.
 If you have another workstation,you can follow the same process.
 
 If you try to push again,you should be OK.
-```
+```bash
  $ git push origin master
 ```
