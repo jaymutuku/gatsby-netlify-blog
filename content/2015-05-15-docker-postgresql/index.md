@@ -131,9 +131,9 @@ INSERT INTO children VALUES
 
 #### 3.3 Do some queries
 ```sql
-
 SELECT * FROM parents JOIN children USING (parent_id) ORDER BY parent_id;
-
+```
+```sql
 SELECT
     parent_id
   , p.name
@@ -145,11 +145,9 @@ SELECT
 FROM parents p
 JOIN children c USING (parent_id)
 GROUP BY 1, 2;
-
 ```
 ![Query Data](./postgre-img-2.png)
-After closing our database client and stopping the container,we should later confirm if indeed our
-data was persisted.
+After closing our database client and stopping the container, we should later confirm if indeed our data was persisted.
 
 ### Conclusion
 You have achieved the following:

@@ -11,7 +11,7 @@ Recap from our last [post](/blog/docker-postgresql/), if you open up you databas
 
 ![Database Connection Error](./autostart-img-1.png)
 
-Simply because we have not started docker service hence the postgres container is not up and running.
+Simply because we have not started docker-compose service hence the postgres container is not up and running.
 
 You may want to start some of your containers at system boot.These are some of the applications that you use frequently and therefore you wish that everytime you are interacting with them, they are up and running!
 
@@ -28,55 +28,69 @@ Check the references at the bottom of this post if you want to delve deeper into
 
 I will use [systemd](https://freedesktop/wiki/software/systemd), process manager to automate this.
 
-### Step 1: Start the Docker Service
+### Step 1: Enable the Docker Service
 
 ```bash
-$ sudo systemctl  start docker
+$ sudo systemctl enable docker
 ```
 Then confirm it is up and running `sudo systemctl status docker`
 
-Type `docker ps -a` to see which containers are running, note the one you want to automate.
-Mine is called `docker-postgres_database_1`.But this name needs to change, simply because I won't be able to know which is which once I have more containers with database.So type this to rename it
-
-```bash
-$ docker rename docker-postgres_database_1 family_database
+### Step 2: Create the Docker Compose Service File For Our Container
+Change directory to the one shown below
 ```
-Confirm the change `docker ps -a`. Yes, It has changed, I can see the output.
-Note the name `family-database` we will use it in the next step.
-
-### Step 2: Create the Service File
-Then, change directory to the one shown below
+$ cd /etc/systemd/system/
 ```
-$ cd /etc/systemd/systemd/
-```
-While inside that folder create a file.Mine I called it `docker-family-database.service`
+While inside that folder create a file. Mine I called it `docker-compose-familyDB.service`
 Here is the command
 ```bash
-$ sudo touch docker-family-database.service
+$ sudo touch docker-compose-familyDB.service
 ```
 Use vim or Gedit to open that file.
 ```bash
-$ sudo gedit docker-family-database.service
+$ sudo gedit docker-compose-familyDB.service
 ```
 Then paste the following content and save the file.
 
 ```
+# /etc/systemd/system/docker-compose-familyDB.service
+
 [Unit]
-Description=Family Database Container
+Description=Docker Compose Application familyDB  Service
 Requires=docker.service
 After=docker.service
 
 [Service]
-Restart=always
-ExecStart=/usr/bin/docker start -a family-database
-ExecStop=/usr/bin/docker stop -t 2 family-database
+WorkingDirectory=/home/josphat/Desktop/docker-postgres
+ExecStart=/usr/local/bin/docker-compose up
+ExecStop=/usr/local/bin/docker-compose down
+TimeoutStartSec=0
+Restart=on-failure
+StartLimitIntervalSec=60
+StartLimitBurst=3
 
 [Install]
-WantedBy=local.target
+WantedBy=multi-user.target
 ```
 
+On our `docker-compose.yml` file, in the previous post, add the line `restart: always` meaning our container 
+restarts only when Docker daemon restarts.Here is how our file now looks like.
 
+```
+version: "3.3"
+services:
+  database:
+    image: postgres:latest # use latest official image
+    env_file:
+      - database.env # configure postgres
+    volumes:
+      - database-data:/var/lib/postgresql/data/ # persist data even if cotainer shuts down
+    ports:
+      - 5432:5432
+    restart: always
+volumes:
+  database-data: # names volumes can be managed easier using docker-compose
 
+```
 
 ### Step 3: Activate the Service File
 First reload the unit file we created.Run this command everytime you do a modification to your unit file.
@@ -88,33 +102,28 @@ $ sudo systemctl daemon-reload
 Then activate the service run by typing the following commands
 
 ```
-$ sudo systemctl start docker-family-database.service
-$ sudo systemctl enable docker-family-database.service
-```
-Your terminal output should be something similar to this.
-
-```
-josphat@localhost ~]$ sudo systemctl enable docker-family-database.service
-Created symlink /etc/systemd/system/local.target.wants/docker-family-database.service → /etc/systemd/system/docker-family-database.service.
-
+$ sudo systemctl enable docker-compose-familyDB.service
 ```
 Whenever you want to stop the service, here are the commands
 
 ```
-$ sudo systemctl stop docker-family-database.service
-$ sudo systemctl disable docker-family-database.service
+$ sudo systemctl stop docker-compose-familyDB.service
+$ sudo systemctl disable docker-compose-familyDB.service
 
 ```
 ### Step 4: Verify your Service is Running
 
 Reboot
 ```bash
-$ sudo reboot
+$ reboot
 ```
-Then after you system is up, Open Dbeaver Client and Verify if the **Database Connection Error** is displayed,as shown by the screenshot on the top of this post.
+Then after you system is up, Open Dbeaver Client and Verify if the **Database Connection Error** is displayed, as shown by the screenshot on the top of this post.
 
-If you were able to connect to your database, then your service is running, in short, you have automatically started postgres docker container at system reboot.
+If you were able to connect to your database automatically, then your service is up and running, in short, you have automatically started postgres docker container at system reboot. Otherwise you can type the following command to check status of your service and troubleshoot as necessary.
 
+```
+$ sudo systemctl status docker-compose-familyDB.service
+```
 
 ### TODO:
 I will definately remove these references from this post and create another post for Diagram As Code.
@@ -128,6 +137,3 @@ If you wish to learn more on this Diagram As Code.Here are a few resources,I fou
 - [Create Cloud-Based Diagrams with Python](https://diagrams.mingrammer.com/)
 - [Still More Plant UML Diagrams](https://ogom.github.io/draw_uml/plantuml/)
 - [Everything As Code!](https://hackernoon.com/everything-as-code-explained-0ibg32a3)
-
-References for this post
-- [Start Docker Containers Automatically](https://mehmandarov.com/start-docker-containers-automatically/)
