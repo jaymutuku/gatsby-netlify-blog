@@ -86,9 +86,6 @@ In my case,I usually use [DBeaver](https://dbeaver.io/), you can use pgAdmin or 
 
 **TODO:** Actually you can use a docker container for the client e.g [Adminer Docker Image](https://hub.docker.com/_/adminer/) but that is for another day.
 
-I had to force remove a container that was not responding `docker rm --force b9501665a499`
-The container id for `postgres:latest`
-
 ![Client Connection](./postgre-img-1.png)
 
 
@@ -186,11 +183,12 @@ $ docker rm --force <container_id>
 $ docker volume prune
 ```
 or be more specific if you don't want to delete all the volumes
-```
-$ docker volume ls
 ```bash
-then `docker volume rm <volume_name>`.
-
+$ docker volume ls
+```
+```bash
+$ docker volume rm <volume_name>
+```
 #### 3. Recreate the volumes
 Recreating is simply starting the application
 ```bash

@@ -85,13 +85,13 @@ First reload the unit file we created.Run this command everytime you do a modifi
 $ sudo systemctl daemon-reload
 ```
 
-Then activate the service run by typeing the following commands
+Then activate the service run by typing the following commands
 
 ```
 $ sudo systemctl start docker-family-database.service
 $ sudo systemctl enable docker-family-database.service
 ```
-Your terminal outout should be something simialr to this
+Your terminal output should be something similar to this.
 
 ```
 josphat@localhost ~]$ sudo systemctl enable docker-family-database.service
