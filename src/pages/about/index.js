@@ -46,19 +46,14 @@ class About extends React.Component {
             <h1>Hi, I'm Josphat!</h1>
             <h2>Quality Assurance Engineer</h2> 
             <p>
-              This blog is my attempt to <a href = "https://www.swyx.io/writing/learn-in-public/" >learn in public</a>   
+              This blog is my attempt to <a href = "https://www.swyx.io/writing/learn-in-public/" >learn in public</a>&nbsp;
               and also serves as an online backup of my diary notes as far as software quality assurance work is concerned.
               It doesn't necessary have  to do with just technical skills but can have posts that I deem quite useful and I feel the need to share.
               This is kind of a living documentation, so many posts here will be kept on a constant update mode as I curate and improve their quality.
               So with that said, there are still no guarantees but incase you need to contact me, my email is mutuku "dot" josphat "at" gmail "dot" com.
-              About me:
-              I have a good knowledge of translating manual test cases to automated ones.Am very proficient in designing test cases,writing test plans 
-              and also being a QA Lead, am good at assigning test effort and resources to test team.
+              Here is my<a href="https://github.com/jaymutuku/jaymutuku.github.io">"profile"</a>&nbsp;for more about me.            
             </p>
-            <p>Attribution is very important in the tech world,it shows you appreciate and respect someone's work because you didn't start from scratch.
-              The original template of this blog theme is from <a href = "https://lgcolella.github.io/gatsby-starter-developer-blog/" >Liugi Collela</a>  
-              and most of the images here are from <a href="https://pixabay.com">Pixabay</a>, content is stolen from everywhere!
-            </p>
+            
             <br />
             <h2>Skills</h2>
             <ImageList edges={skillIcons.edges} />
