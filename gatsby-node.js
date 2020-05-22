@@ -10,12 +10,15 @@ exports.createPages = ({ actions, graphql }) => {
 
   return graphql(`
     {
-      allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}) {
+      allMarkdownRemark(
+        filter: {  frontmatter: {  published: { eq: true } } }
+        sort: {order: DESC, fields: [frontmatter___date]}  
+        ) {
         edges {
           node {
             frontmatter {
               path
-              tags
+              tags              
             }
             fileAbsolutePath
           }
