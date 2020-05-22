@@ -1,10 +1,11 @@
 ---
 title: How to automatically start docker containers
 date: 2020-05-13
-tags: [docker, code, visualstudiocode]
+tags: [docker, code]
 path: blog/automatically-start-docker-containers
 cover: ./preview.jpg
 excerpt: Autostart some docker containers on system boot
+published: true
 ---
 
 Recap from our last [post](/blog/docker-postgresql/), if you open up you database client, DBeaver for instance. You will get the following error.

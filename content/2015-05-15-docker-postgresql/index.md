@@ -5,6 +5,7 @@ tags: [postgresql, docker]
 path: blog/docker-postgresql
 cover: ./preview.jpg
 excerpt: Run postgresql as a docker container
+published: true
 ---
 
 You have succeeded in [setting up docker engine in Fedora 32 and installing docker compose as well](/blog/set-up-docker-in-fedora-32/).

@@ -5,6 +5,7 @@ tags: [fedora, docker]
 path: blog/set-up-docker-in-fedora-32
 cover: ./preview.jpg
 excerpt: install docker in fedora 32
+published: true
 ---
 
 This post seems trivial especially to the geeks out there.There are tonnes of links for this!

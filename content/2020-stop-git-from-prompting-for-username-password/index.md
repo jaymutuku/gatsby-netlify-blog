@@ -5,6 +5,7 @@ tags: [git]
 path: blog/stop-git-from-asking-username-password
 cover: ./preview.jpg
 excerpt: Stop git from asking username and password everytime.
+published: true
 ---
 
 ## Problem

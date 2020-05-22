@@ -5,6 +5,7 @@ tags: [gimp]
 path: blog/change-color-icon-with-gimp
 cover: ./preview.jpg
 excerpt: Change the color of an icon to black  white.
+published: true
 ---
 
 The theme of this blog is black and white.So I wanted all images and icons appearing here to match as well.
