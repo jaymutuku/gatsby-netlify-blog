@@ -51,7 +51,7 @@ class About extends React.Component {
               It doesn't necessary have  to do with just technical skills but can have posts that I deem quite useful and I feel the need to share.
               This is kind of a living documentation, so many posts here will be kept on a constant update mode as I curate and improve their quality.
               So with that said, there are still no guarantees but incase you need to contact me, my email is mutuku "dot" josphat "at" gmail "dot" com.
-              Here is my<a href="https://jaymutuku.github.io">profile</a>&nbsp;for more about me.            
+              Here is my &nbsp;< a href = "https://jaymutuku.github.io" >profile</a>&nbsp;for more about me.            
             </p>
             
             <br />
