@@ -39,7 +39,7 @@
   "scripts": {
     "build": "gatsby build",
     "dev": "gatsby develop",
-    "clean":"gatsby clean",    
+    "clean": "gatsby clean",
     "start": "npm run dev",
     "serve": "gatsby serve",
     "format": "prettier --write \"src/**/*.js\"",
