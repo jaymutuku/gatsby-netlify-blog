@@ -24,36 +24,6 @@ Namely;
 - Installing Fonts and Various Packages.
 - Enabling Vital System Services.
 
-- [Arch Linux Installation Process for a Legacy/BIOS/MBR System](#arch-linux-installation-process-for-a-legacybiosmbr-system)
-  - [Step 1: Why](#step-1-why)
-  - [Step 2: Boot Options](#step-2-boot-options)
-  - [Step 3: What is Different from UEFI Process](#step-3-what-is-different-from-uefi-process)
-  - [Step 4: Formatting and mounting the Partitions](#step-4-formatting-and-mounting-the-partitions)
-    - [4.1 /boot partition (A)](#41-boot-partition-a)
-    - [4.2 / - root partition (B)](#42----root-partition-b)
-    - [4.3  /home partition (C)](#43-home-partition-c)
-    - [4.4 /var partition (D)](#44-var-partition-d)
-  - [Step 5: Generating Fstab File and Editing it for Performance](#step-5-generating-fstab-file-and-editing-it-for-performance)
-  - [Step 6: Install Linux Kernel and Firmware (lts)](#step-6-install-linux-kernel-and-firmware-lts)
-  - [Step 7: Install Syslinux bootloader for Legacy System](#step-7-install-syslinux-bootloader-for-legacy-system)
-    - [7.1 Create Entries for the Boot Menu](#71-create-entries-for-the-boot-menu)
-    - [7.2 Edit the syslinux config to point to the correct kernel/root partition](#72-edit-the-syslinux-config-to-point-to-the-correct-kernelroot-partition)
-    - [7.3  syslinux.cfg](#73-syslinuxcfg)
-  - [Step 8: Install Display Server](#step-8-install-display-server)
-  - [Step 9: Install Display Manager and Configure it with the Desktop Environment](#step-9-install-display-manager-and-configure-it-with-the-desktop-environment)
-    - [9.1 Configure Light Display Manager](#91-configure-light-display-manager)
-    - [9.2 Enable LightDM Service](#92-enable-lightdm-service)
-    - [9.3 Check the sessions you have in your system](#93-check-the-sessions-you-have-in-your-system)
-  - [Step 10: Install Cinnamon Desktop Environment](#step-10-install-cinnamon-desktop-environment)
-  - [Troubleshooting](#troubleshooting)
-    - [1. Force disable service](#1-force-disable-service)
-    - [2. Check what is 'eating'  your space](#2-check-what-is-eating-your-space)
-    - [3. TIMED OUT ERROR](#3-timed-out-error)
-    - [4. Check you network interface once you login](#4-check-you-network-interface-once-you-login)
-    - [5. Wipe File Systems](#5-wipe-file-systems)
-  - [References](#references)
-  - [Notes](#notes)
-
 
 ### Step 1: Why
 
@@ -172,7 +142,7 @@ $ mount /dev/sda4 /mnt/var
 
 **Important to Note:**
 *Mounting* the partitions to their respective filesystems is VERY important.Because if you happen
-to forget this key step, all your installation i.e `# pacman -S blah blah` or `pacstrap /mnt blah blah`
+to forget this key step, all your installation i.e `# pacman -S linux linux-firmware` or `pacstrap /mnt base base-devel`
 will be futile.
 
 But the following step will help us verify that we have mounted everything and we are good to go!
@@ -269,7 +239,6 @@ Installed MBR (/usr/lib/syslinux/bios/mbr.bin) to /dev/sda
 The key thing to note in that output is where the Boot Flag has been set!
 It should be `/dev/sda1` which in my case is correct.
 
-[Refer to Boot Partition Section:](#41-boot-partition-a) 
 
 #### 7.2 Edit the syslinux config to point to the correct kernel/root partition
 
@@ -461,11 +430,14 @@ you can rather use
 #### 3. TIMED OUT ERROR
 
   [TIME] Timed out waiting for device /dev/disk/by-uuid/E6B9-2FS
+
   [DEPEND] Dependency failed for File System check on /dev/disk/by-uuid/.....
+
   [DEPEND] Dependency failed for /boot/efi
+
   [DEPEND] Dependency failed for Local File Systems
 
-  I have seen this error get fixed by this [process](#step-5-generating-fstab-file-and-editing-it-for-performance)
+  I have seen this error get fixed by editing the fstab file.
 
 #### 4. Check you network interface once you login
 
