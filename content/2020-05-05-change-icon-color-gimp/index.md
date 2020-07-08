@@ -60,6 +60,8 @@ Now, invert the image by selecting `Colors > Invert`
 Since in my case,I know my  `Background Color` is `white`.I can adjust the curves as shown below.
 And get the below image.
 
+To adjust the curves select `Colors > Curves`.
+
 ![](./gimp-img-5.png)
 
 Foreground and Background colors are always displayed in gimp as shown below

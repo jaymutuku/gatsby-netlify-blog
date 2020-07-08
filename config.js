@@ -145,6 +145,17 @@ module.exports = {
         },
     api: {
         description: 'API (Application Programming Interface) is a set of programming code that enables data transmission between one software product and another.'
-         }
+         },
+    arch:{
+      name:'Arch Linux',
+      description:'Arch Linux is a minimalistic linux distribution for computers with x86_64 processors that follows a rolling release model.'
+    },
+    vim:{
+      description:'Vim is a highly configurable text editor build to make creating and changing any kind of text very efficient'
+    },
+    appium:{
+      description:'Appium is an open source test automation framework for use with native,hybrid and mobile web apps.'
+    }
+
   }
 }
